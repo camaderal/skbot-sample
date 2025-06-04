@@ -1,0 +1,66 @@
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+exclude = '''
+/(
+    \.git
+    | \.venv
+)/
+'''
+extend-exclude = ".*/*.ipynb|.*/*.xls"
+
+[tool.ruff]
+lint.select = ["E", "F", "B", "D", "I"] 
+lint.ignore = ["D104", "D107", "D200", "D203", "D205", "D212", "D401", "D406", "D407"]
+lint.fixable = ["E", "F", "B", "I"]
+line-length = 120
+target-version = "py310"
+exclude = [
+    "__pycache__",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".pytest_cache",
+    "*.log",
+    ".venv",
+    "deploy",
+]
+
+[tool.pydoclint]
+style = "google"
+allow-init-docstring = true
+exclude = "(__pycache__|\\.ruff_cache|\\.mypy_cache|\\.pytest_cache|\\.venv|.*\\.log|deploy/.*)"
+
+[tool.mypy]
+no_implicit_optional = false
+disallow_untyped_defs = true
+ignore_missing_imports = true
+show_error_codes = true
+disable_error_code = ["name-defined", "arg-type", "dict-item"]
+explicit_package_bases = true
+exclude = "(__pycache__|\\.ruff_cache|\\.mypy_cache|\\.pytest_cache|\\.venv|.*\\.log|deploy/.*)"
+
+[tool.pymarkdown]
+plugins.MD013.enabled = false
+plugins.MD024.enabled = false
+plugins.MD036.enabled = false
+plugins.MD037.enabled = false
+plugins.MD033 = { allowed_elements = ["br"] }
+
+[tool.yamllint]
+extends = "default"
+ignore = [
+    "__pycache__",
+    ".ruff_cache",
+    ".pytest_cache",
+    ".mypy_cache",
+    "*.log",
+    ".venv",
+    "deploy",
+]
+
+[tool.yamllint.rules]
+line-length.disable = true
+document-start.disable = true
+comments-indentation.disable = true
+truthy.disable = true
