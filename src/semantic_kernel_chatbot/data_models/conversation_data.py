@@ -41,7 +41,7 @@ class ConversationData:
         If the history exceeds max_turns, the oldest turn is removed.
         """
         self.history.append(turn)
-        if len(self.history) >= self.max_turns:
+        if len(self.history) > self.max_turns:
             self.history.pop(0)
 
     def toMessages(self) -> list[dict[str, str]]:
