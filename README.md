@@ -12,15 +12,19 @@ This repository contains a Python implementation of a chatbot that integrates [M
 - **Dialogs** – The `dialogs` package includes a login dialog enabling OAuth sign‑in when single sign‑on is configured.
 - **Tracing and logging** – The `trace` package configures OpenTelemetry and logging, allowing telemetry to be sent to Azure Monitor when connection information is present.
 
-## Development
+## Setup
 
-The project targets Python 3.10. Development container definitions are provided under `.devcontainer`. Formatting, linting and type checks are configured via `pyproject.toml` and can be executed with `make check-all`.
+The recommended way to work with this repository is using the provided dev container. Open the folder in Visual Studio Code and choose **Reopen in Container** when prompted. The `.devcontainer` folder sets up a ready-made Python 3.10 environment with required tools and extensions.
 
-To install dependencies locally:
+If you prefer to run locally, install dependencies with:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+## Development
+
+The project targets Python 3.10. Formatting, linting and type checks are configured via `pyproject.toml` and can be executed with `make check-all`.
 
 To run the bot during development:
 
